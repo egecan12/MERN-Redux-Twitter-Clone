@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 import Form from "react-bootstrap/Form";
 
 function LandingPage(props) {
-  const data = useSelector((state) => state.user.userData);
-  console.log(data?.email);
-  console.log(data);
+  // const data = useSelector((state) => state.user.userData);
+  // console.log(data?.email);
+  // console.log(data);
 
   return (
     <>
