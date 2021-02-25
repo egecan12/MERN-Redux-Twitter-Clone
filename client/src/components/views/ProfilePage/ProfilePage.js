@@ -36,3 +36,12 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+//That could be an alternative way to render the data after waiting to fetch the data compeletly
+// {data ? (
+//   <div>
+//     <p>Welcome to landing page ->{data.email}</p>
+//     <h1>{data.image}</h1>
+//   </div>
+// ) : null}
+
