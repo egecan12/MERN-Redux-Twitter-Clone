@@ -8,6 +8,8 @@ import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
 import ProfilePage from "./views/ProfilePage/ProfilePage.js";
+import AddTwit from "./views/addTwit/addTwit.js";
+
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -23,6 +25,8 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/profilepage" component={Auth(ProfilePage, true)} />
+          <Route exact path="/addTwit" component={Auth(AddTwit, true)} />
+
         </Switch>
       </div>
       <Footer />

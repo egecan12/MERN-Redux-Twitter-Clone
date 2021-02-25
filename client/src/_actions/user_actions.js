@@ -4,6 +4,7 @@ import {
     REGISTER_USER,
     AUTH_USER,
     LOGOUT_USER,
+    ADD_TWIT,
 } from './types';
 import { USER_SERVER } from '../components/Config.js';
 
@@ -47,3 +48,12 @@ export function logoutUser(){
     }
 }
 
+export function addTwit(){
+    const request = axios.post(`${USER_SERVER}/sendTwit`)
+    .then(response => response.data);
+
+    return {
+        type: ADD_TWIT,
+        payload: request
+    }
+}
