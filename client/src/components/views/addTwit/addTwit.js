@@ -23,13 +23,14 @@ class AddTwit extends Component {
         this.props.addTwit(this.state);
         console.log("handle submit worked perfectly!");
         this.setState({
-            name: '',
-            city: '',
-            occupation: ''
+            name: this.state.name,
+            city: this.state.city,
+            occupation: this.state.occupation
         });
     }
 
     render(){
+        console.log(this.state);
         return(
             <div className="form-container">
                 <form onSubmit={this.handleOnSubmit}>
