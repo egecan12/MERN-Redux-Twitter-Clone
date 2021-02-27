@@ -34,12 +34,20 @@ router.post("/register", (req, res) => {
         });
     });
 });
-router.get("/landingPage", (req, res, next) => {
-	twit.find().then(function(twits) {
+router.get("/bringAllTwits", (req, res, next) => {
+	Twit.find().limit(5).then(function(twits) {
     
         res.json(twits);
     
         });
+
+
+
+    // res.status(200).json({
+        
+    //     message: "hi",
+    // });
+    
 });
 
 router.post("/sendTwit", (req, res) => {

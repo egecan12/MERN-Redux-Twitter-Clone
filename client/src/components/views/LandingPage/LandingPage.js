@@ -3,13 +3,17 @@ import { useSelector } from "react-redux";
 import Card from "react-bootstrap/Card";
 
 import Form from "react-bootstrap/Form";
-
+import { bringAllTwits } from "../../../_actions/user_actions";
 
 function LandingPage(props) {
   // const data = useSelector((state) => state.user.userData);
   // console.log(data?.email);
   // console.log(data);
-
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('Bring all tweets worked !');
+    bringAllTwits();
+  }
   return (
     <>
       <div className="app">
@@ -20,12 +24,13 @@ function LandingPage(props) {
           </Form.Group>
         </Form> */}
 
-        
-
-        <Card body style={{  width: 800, height:500, marginBottom: "-200px" }}>
-        
-        </Card>
-     
+<a href="#" onClick={handleClick}>
+      Click me
+    </a>
+        <Card
+          body
+          style={{ width: 800, height: 500, marginBottom: "-200px" }}
+        ></Card>
       </div>
     </>
   );

@@ -5,6 +5,7 @@ import {
     AUTH_USER,
     LOGOUT_USER,
     ADD_TWIT,
+    ALL_TWITS
 } from './types';
 import { USER_SERVER } from '../components/Config.js';
 
@@ -54,6 +55,16 @@ export function addTwit(dataToSubmit){
 
     return {
         type: ADD_TWIT,
+        payload: request
+    }
+}
+
+export function bringAllTwits(){
+    const request = axios.get(`${USER_SERVER}/bringAllTwits`)
+    .then(response => response.data);
+
+    return {
+        type: ALL_TWITS,
         payload: request
     }
 }
