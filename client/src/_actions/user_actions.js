@@ -48,8 +48,8 @@ export function logoutUser(){
     }
 }
 
-export function addTwit(){
-    const request = axios.post(`${USER_SERVER}/sendTwit`)
+export function addTwit(dataToSubmit){
+    const request = axios.post(`${USER_SERVER}/sendTwit`,dataToSubmit)
     .then(response => response.data);
 
     return {
