@@ -12,6 +12,9 @@ function LeftMenu(props) {
     <Menu.Item key="mail">
       <a href="/profilepage">Profile Settings</a>
     </Menu.Item>
+    <Menu.Item key="mail">
+      <a href="/addTwit">Add Twit</a>
+    </Menu.Item>
 
 
     {/* <SubMenu title={<span>Blogs</span>}>
