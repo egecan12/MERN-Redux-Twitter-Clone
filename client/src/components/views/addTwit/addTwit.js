@@ -40,26 +40,22 @@ function AddTwit(props) {
 
     <Formik
       initialValues={{
-        city: '',
-        name: '',
-        occupation: '',
+        twit: '',
+        username: '',
+        email: '',
      
       }}
       validationSchema={Yup.object().shape({
-        name: Yup.string()
-          .required('Name is required'),
-        city: Yup.string()
-          .required('city Name is required'),
-        occupation: Yup.string()
-          .required('occu is required')
+        twit: Yup.string()
+          .required('twit is required'),
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
 
           let dataToSubmit = {
-            city: values.city,
-            occupation: values.occupation,
-            name: values.name,
+            email: props.user.userData.email,
+            twit: values.twit,
+            username: props.user.userData.name,
           };
 
           dispatch(addTwit(dataToSubmit)).then(response => {
@@ -88,15 +84,15 @@ function AddTwit(props) {
         } = props;
         return (
           <div className="app">
-            <h2>Sign up</h2>
+            <h2>Add twit</h2>
             <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
 
-              <Form.Item required label="Name">
+              <Form.Item required label="Twit">
                 <Input
-                  id="name"
-                  placeholder="Enter your name"
+                  id="twit"
+                  placeholder="Enter your twit"
                   type="text"
-                  value={values.name}
+                  value={values.twit}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
@@ -107,42 +103,6 @@ function AddTwit(props) {
                   <div className="input-feedback">{errors.name}</div>
                 )}
               </Form.Item>
-
-              <Form.Item required label="city">
-                <Input
-                  id="city"
-                  placeholder="Enter your city"
-                  type="text"
-                  value={values.city}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.lastName && touched.lastName ? 'text-input error' : 'text-input'
-                  }
-                />
-                {errors.lastName && touched.lastName && (
-                  <div className="input-feedback">{errors.lastName}</div>
-                )}
-              </Form.Item>
-
-              <Form.Item required label="occupation" hasFeedback validateStatus={errors.email && touched.email ? "error" : 'success'}>
-                <Input
-                  id="occupation"
-                  placeholder="Enter your occupation"
-                  type="occupation"
-                  value={values.occupation}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.email && touched.email ? 'text-input error' : 'text-input'
-                  }
-                />
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
-                )}
-              </Form.Item>
-
-
               <Form.Item {...tailFormItemLayout}>
                 <Button onClick={handleSubmit} type="primary" disabled={isSubmitting}>
                   Submit

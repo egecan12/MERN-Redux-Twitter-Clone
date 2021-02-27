@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 
 import Form from "react-bootstrap/Form";
 
+
 function LandingPage(props) {
   // const data = useSelector((state) => state.user.userData);
   // console.log(data?.email);
@@ -12,12 +13,14 @@ function LandingPage(props) {
   return (
     <>
       <div className="app">
-        <Form >
+        {/* <Form >
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>Lets write something..</Form.Label>
             <Form.Control as="textarea" rows={2} />
           </Form.Group>
-        </Form>
+        </Form> */}
+
+        
 
         <Card body style={{  width: 800, height:500, marginBottom: "-200px" }}>
         

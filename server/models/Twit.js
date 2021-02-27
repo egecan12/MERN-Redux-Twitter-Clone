@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 
 
 const twitSchema = mongoose.Schema({
-    name: {
+    twit: {
         type:String,
         maxlength:50,
     },
-    city: {
-        type:String,
+    email: {
+        type: String,
     },
-    occupation: {
+    username: {
         type: String,
     },
 
