@@ -34,6 +34,13 @@ router.post("/register", (req, res) => {
         });
     });
 });
+router.get("/landingPage", (req, res, next) => {
+	twit.find().then(function(twits) {
+    
+        res.json(twits);
+    
+        });
+});
 
 router.post("/sendTwit", (req, res) => {
 
