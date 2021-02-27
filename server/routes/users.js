@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { User } = require("../models/User");
+const { Twit } = require("../models/Twit");
+
 
 const { auth } = require("../middleware/auth");
 
@@ -26,6 +28,18 @@ router.post("/register", (req, res) => {
     const user = new User(req.body);
 
     user.save((err, doc) => {
+        if (err) return res.json({ success: false, err });
+        return res.status(200).json({
+            success: true
+        });
+    });
+});
+
+router.post("/sendTwit", (req, res) => {
+
+    const twit = new Twit(req.body);
+
+    twit.save((err, doc) => {
         if (err) return res.json({ success: false, err });
         return res.status(200).json({
             success: true

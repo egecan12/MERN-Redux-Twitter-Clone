@@ -43,7 +43,7 @@ class AddTwit extends Component {
                         <input onChange={this.handleTextChange} value={this.state.city} type="text" name="city" className="form-control" placeholder="City" />
                     </div>
                     <div className="form-group">
-                        <label>Ocuupation</label>
+                        <label>Occupation</label>
                         <input onChange={this.handleTextChange} value={this.state.occupation} type="text" name="occupation" className="form-control" placeholder="Occupation" />
                     </div>
                     <div className="form-group">
