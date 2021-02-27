@@ -9,6 +9,7 @@ function LandingPage(props) {
   // const data = useSelector((state) => state.user.userData);
   // console.log(data?.email);
   // console.log(data);
+  
   function handleClick(e) {
     e.preventDefault();
     console.log('Bring all tweets worked !');

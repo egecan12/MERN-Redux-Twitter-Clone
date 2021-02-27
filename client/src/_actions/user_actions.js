@@ -61,10 +61,16 @@ export function addTwit(dataToSubmit){
 
 export function bringAllTwits(){
     const request = axios.get(`${USER_SERVER}/bringAllTwits`)
-    .then(response => response.data);
-
+    .then(response => response.data)
+    .then(function (response) {
+        console.log(response);
+        // this.setState({events: response.data})
+      })
+     .catch(function (error) {
+        console.log(error);
+     });
     return {
         type: ALL_TWITS,
-        payload: request
+        payload: request,
     }
 }
