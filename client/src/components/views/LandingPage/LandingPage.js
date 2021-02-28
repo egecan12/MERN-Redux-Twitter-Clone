@@ -40,7 +40,7 @@ function LandingPage(props) {
           </Form.Group>
         </Form> */}
 
-        <Card body style={{ width: 800, }}>
+        <Card  style={{ width: "70%", height: "100%" }}>
           {data?.map((twit, index) => (
             <Card body className="d-flex justify-content-around" style={{ marginTop: "5%",padding: "50px" }} >
               <div id="profileInfo" className="d-flex justify-content-around">
