@@ -35,7 +35,7 @@ router.post("/register", (req, res) => {
     });
 });
 router.get("/bringAllTwits", (req, res, next) => {
-	Twit.find().limit(5).then(function(twits) {
+	Twit.find().limit(50).then(function(twits) {
     
         res.json(twits);
     

@@ -16,7 +16,7 @@ export default function ProfilePage() {
           <div className="d-flex ">
             <Gravatar
               email={data?.email}
-              style={{ border: "1px solid black", borderRadius: "50%" }}
+              style={{ border: "2px solid black", borderRadius: "50%" }}
               size={50}
             />
             <div id="profileTextInfo" className="p-4">
@@ -28,7 +28,7 @@ export default function ProfilePage() {
                   </p>
                 </b>
               </div>
-              <p>This is some text within a card body.</p>
+              <p>This page is still in development process</p>
             </div>
           </div>
         </div>

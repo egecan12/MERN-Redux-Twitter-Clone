@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
-
+import Gravatar from "react-gravatar";
 import Form from "react-bootstrap/Form";
 import { bringAllTwits } from "../../../_actions/user_actions";
 
@@ -13,19 +13,19 @@ function LandingPage(props) {
 
   useEffect(() => {
     setTimeout(() => {
-    //To know my current status, send Auth request 
-    dispatch(bringAllTwits()).then(response => {
-        //Not Loggined in Status 
+      //To know my current status, send Auth request
+      dispatch(bringAllTwits()).then((response) => {
+        //Not Loggined in Status
         if (!response.payload) {
-         console.log("payload failed");
-         console.log(response);
-            //Loggined in Status 
+          console.log("payload failed");
+          console.log(response);
+          //Loggined in Status
         } else {
           console.log("payload succesful");
         }
-    })
-  }, 500);
-}, [])
+      });
+    }, 500);
+  }, []);
   // const data = useSelector((state) => state.user.userData);
   // console.log(data?.email);
   // console.log(data);
@@ -40,11 +40,43 @@ function LandingPage(props) {
           </Form.Group>
         </Form> */}
 
+        <Card body style={{ width: 800, marginTop: "2000px" }}>
+          {data?.map((twit, index) => (
+            <Card body className="d-flex justify-content-around" style={{ marginTop: "5%" }} >
+              <div id="profileInfo" className="d-flex justify-content-around">
+                <div className="d-flex ">
+                  <Gravatar
+                    email={data?.[index]?.email}
+                    style={{  border: "2px solid black", borderRadius: "50%" }}
+                    size={50}
+                  />
+                  <div id="profileTextInfo" className="p-4">
+                    <div className="d-flex ">
+                      <b>
+                        <p className="d-flex " style={{ fontSize: "1.5em" }}>
+                          {" "}
+                          {data?.[index]?.email}
+                        </p>
+                      </b>
+                    </div>
+                    <p>{data?.[index]?.twit}</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
 
-        <Card
-          body
-          style={{ width: 800, height: 500, marginBottom: "-200px" }}
-        ></Card>
+            // <div>
+            //   <Gravatar
+            //     email={data?.[0].email}
+            //     style={{ border: "1px solid black", borderRadius: "50%" }}
+            //     size={50}
+            //   />
+            //   <p key={index}>
+            //     {data?.[index]?.username}:{data?.[index]?.twit}
+            //   </p>
+            // </div>
+          ))}
+        </Card>
       </div>
     </>
   );
