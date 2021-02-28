@@ -1,20 +1,35 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 
 import Form from "react-bootstrap/Form";
 import { bringAllTwits } from "../../../_actions/user_actions";
 
 function LandingPage(props) {
+  const data = useSelector((state) => state.user.allTwits);
+  console.log(data?.[0].email);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+    //To know my current status, send Auth request 
+    dispatch(bringAllTwits()).then(response => {
+        //Not Loggined in Status 
+        if (!response.payload) {
+         console.log("payload failed");
+         console.log(response);
+            //Loggined in Status 
+        } else {
+          console.log("payload succesful");
+        }
+    })
+  }, 500);
+}, [])
   // const data = useSelector((state) => state.user.userData);
   // console.log(data?.email);
   // console.log(data);
-  
-  function handleClick(e) {
-    e.preventDefault();
-    console.log('Bring all tweets worked !');
-    bringAllTwits();
-  }
+
   return (
     <>
       <div className="app">
@@ -25,9 +40,7 @@ function LandingPage(props) {
           </Form.Group>
         </Form> */}
 
-<a href="#" onClick={handleClick}>
-      Click me
-    </a>
+
         <Card
           body
           style={{ width: 800, height: 500, marginBottom: "-200px" }}
