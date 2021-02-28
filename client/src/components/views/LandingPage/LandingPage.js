@@ -40,9 +40,9 @@ function LandingPage(props) {
           </Form.Group>
         </Form> */}
 
-        <Card body style={{ width: 800, marginTop: "2000px" }}>
+        <Card body style={{ width: 800, }}>
           {data?.map((twit, index) => (
-            <Card body className="d-flex justify-content-around" style={{ marginTop: "5%" }} >
+            <Card body className="d-flex justify-content-around" style={{ marginTop: "5%",padding: "50px" }} >
               <div id="profileInfo" className="d-flex justify-content-around">
                 <div className="d-flex ">
                   <Gravatar
@@ -55,7 +55,7 @@ function LandingPage(props) {
                       <b>
                         <p className="d-flex " style={{ fontSize: "1.5em" }}>
                           {" "}
-                          {data?.[index]?.email}
+                          {data?.[index]?.username}
                         </p>
                       </b>
                     </div>
