@@ -44,7 +44,9 @@ function RegisterPage(props) {
         lastName: '',
         name: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        bio: '',
+        birthday: '',
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string()
@@ -69,7 +71,9 @@ function RegisterPage(props) {
             password: values.password,
             name: values.name,
             lastname: values.lastname,
-            image: `http://gravatar.com/avatar/${moment().unix()}?d=identicon`
+            image: `http://gravatar.com/avatar/${moment().unix()}?d=identicon`,
+            bio: '',
+            birthday: '',
           };
 
           dispatch(registerUser(dataToSubmit)).then(response => {

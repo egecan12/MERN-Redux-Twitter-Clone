@@ -62,6 +62,43 @@ router.post("/sendTwit", (req, res) => {
     });
 });
 
+router.post("/sendProfileSettings",  (req, res) => {
+    const user = new User(req.body);
+      var myquery = { email: req.body.email }; //aliye sor _id: req.user.id
+      var newvalues = {
+        $set: {
+          bio: req.body.bio,
+        },
+      };
+      
+      User.updateOne(myquery, newvalues, function (err, res) {
+        if (err) throw err;
+        console.log("user data updated succesfully");
+        console.log(res);
+                
+      });
+  });
+  router.get("/profile/:username", function (req, res) {
+    User.findOne({ username: req.params.username }, async (err, user) => {
+      if (err) {
+        return res.json({ error: "generic error" });
+      }
+      Twit.find({ email: user.email }, function (err, twits) {
+        console.log("calisiyor");
+
+        res.json({
+        //   ...user.settings,
+        //   email: user.email,
+        //   username: user.username,
+        //   country: user.country,
+        //   birthday: user.birthday,
+        //   bio: user.bio,
+        //   posts: posts,
+         
+        });
+      });
+    });
+  });
 router.post("/login", (req, res) => {
     User.findOne({ email: req.body.email }, (err, user) => {
         if (!user)

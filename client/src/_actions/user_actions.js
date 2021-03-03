@@ -5,7 +5,8 @@ import {
     AUTH_USER,
     LOGOUT_USER,
     ADD_TWIT,
-    ALL_TWITS
+    ALL_TWITS,
+    PROFILE_SETTINGS
 } from './types';
 import { USER_SERVER } from '../components/Config.js';
 
@@ -62,15 +63,18 @@ export function addTwit(dataToSubmit){
 export function bringAllTwits(){
     const request = axios.get(`${USER_SERVER}/bringAllTwits`)
     .then(response => response.data)
-    // .then(function (response) {
-    //     console.log(response);
-    //     // this.setState({events: response.data})
-    //   })
-    //  .catch(function (error) {
-    //     console.log(error);
-    //   });
+
     return {
         type: ALL_TWITS,
+        payload: request,
+    }
+} 
+export function updateProfileSettings(dataToSubmit){
+    const request = axios.post(`${USER_SERVER}/sendProfileSettings`, dataToSubmit)
+    .then(response => response.data)
+
+    return {
+        type: PROFILE_SETTINGS,
         payload: request,
     }
 } 

@@ -5,6 +5,7 @@ import {
   LOGOUT_USER,
   ADD_TWIT,
   ALL_TWITS,
+  PROFILE_SETTINGS,
 } from "../_actions/types";
 
 export default function (state = {}, action) {
@@ -19,6 +20,8 @@ export default function (state = {}, action) {
       return { ...state, allTwits: action.payload };
     case LOGOUT_USER:
       return { ...state };
+    case PROFILE_SETTINGS:
+      return { ...state, profile_settings: action.payload };
     case ADD_TWIT:
       return { ...state, addTwit: action.payload };
     default:

@@ -32,6 +32,12 @@ const userSchema = mongoose.Schema({
     },
     tokenExp :{
         type: Number
+    },
+    bio :{
+        type: String
+    },
+    birthday : {
+        type: String
     }
 })
 
