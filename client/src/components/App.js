@@ -7,7 +7,7 @@ import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
-import ProfilePage from "./views/ProfilePage/ProfilePage.js";
+import ProfileSettingsPage from "./views/ProfileSettingsPage/ProfileSettingsPage.js";
 import AddTwit from "./views/addTwit/addTwit.js";
 
 
@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
-          <Route exact path="/profilepage" component={Auth(ProfilePage, true)} />
+          <Route exact path="/ProfileSettingsPage" component={Auth(ProfileSettingsPage, true)} />
           <Route exact path="/addTwit" component={Auth(AddTwit, true)} />
 
         </Switch>

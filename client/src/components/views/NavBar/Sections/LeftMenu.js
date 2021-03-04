@@ -10,7 +10,7 @@ function LeftMenu(props) {
       <a href="/">Home</a>
     </Menu.Item>
     <Menu.Item key="mail">
-      <a href="/profilepage">Profile Settings</a>
+      <a href="/ProfileSettingsPage">Profile Settings</a>
     </Menu.Item>
     <Menu.Item key="addTwit">
       <a href="/addTwit">Add Twit</a>

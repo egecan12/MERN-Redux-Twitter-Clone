@@ -20,6 +20,8 @@ router.get("/auth", auth, (req, res) => {
         lastname: req.user.lastname,
         role: req.user.role,
         image: req.user.image,
+        bio: req.user.bio,
+        birthday: req.user.birthday,
     });
 });
 
@@ -68,6 +70,7 @@ router.post("/sendProfileSettings",  (req, res) => {
       var newvalues = {
         $set: {
           bio: req.body.bio,
+          birthday: req.body.birthday
         },
       };
       
