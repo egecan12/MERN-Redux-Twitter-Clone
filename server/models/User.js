@@ -38,6 +38,9 @@ const userSchema = mongoose.Schema({
     },
     birthday : {
         type: String
+    },
+    username: {
+        type: String
     }
 })
 

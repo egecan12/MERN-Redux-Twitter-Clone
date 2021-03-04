@@ -47,10 +47,13 @@ function RegisterPage(props) {
         confirmPassword: '',
         bio: '',
         birthday: '',
+        username: '',
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string()
           .required('Name is required'),
+        username: Yup.string()
+          .required('Username is required'),
         lastName: Yup.string()
           .required('Last Name is required'),
         email: Yup.string()
@@ -74,6 +77,7 @@ function RegisterPage(props) {
             image: `http://gravatar.com/avatar/${moment().unix()}?d=identicon`,
             bio: '',
             birthday: '',
+            username: values.username,
           };
 
           dispatch(registerUser(dataToSubmit)).then(response => {
@@ -111,6 +115,22 @@ function RegisterPage(props) {
                   placeholder="Enter your name"
                   type="text"
                   value={values.name}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.name && touched.name ? 'text-input error' : 'text-input'
+                  }
+                />
+                {errors.name && touched.name && (
+                  <div className="input-feedback">{errors.name}</div>
+                )}
+              </Form.Item>
+              <Form.Item required label="Username">
+                <Input
+                  id="username"
+                  placeholder="Enter your username"
+                  type="text"
+                  value={values.username}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={

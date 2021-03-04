@@ -35,6 +35,8 @@ function ProfileSettingsPage(props) {
   let myEmail = props.user?.userData?.email;
   let myBio = props.user?.userData?.bio;
   let myBirthday = props.user?.userData?.birthday;
+  let myUsername = props.user?.userData?.username;
+
 
 
   const dispatch = useDispatch();
@@ -44,10 +46,11 @@ function ProfileSettingsPage(props) {
         bio: "",
         email: "",
         birthday: "",
+        username: "",
       }}
       validationSchema={Yup.object().shape({
-        bio: Yup.string().required("bio is required"),
-        birthday: Yup.string().required("birthday is required"),
+        bio: Yup.string(),
+        birthday: Yup.string(),
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
@@ -55,6 +58,7 @@ function ProfileSettingsPage(props) {
             bio: values.bio,
             email: props.user.userData.email,
             birthday: values.birthday,
+            username: values.username,
           };
 
           console.log(props.user?.userData?.email);
@@ -94,12 +98,11 @@ function ProfileSettingsPage(props) {
                 style={{ border: "1px solid black", borderRadius: "50%" }}
                 size={150}
               />
-              <Form.Item required label="Biography">
+                <Form.Item label="Username">
                 <Input
-                  id="bio"
-                  placeholder={myBio}
+                  id="username"
+                  placeholder={myUsername}
                   type="text"
-                  value={values.bio}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
@@ -107,6 +110,29 @@ function ProfileSettingsPage(props) {
                       ? "text-input error"
                       : "text-input"
                   }
+                  value={values.username}
+
+
+                />
+                {errors.name && touched.name && (
+                  <div className="input-feedback">{errors.name}</div>
+                )}
+              </Form.Item>
+              <Form.Item label="Biography">
+                <Input
+                  id="bio"
+                  placeholder={myBio}
+                  type="text"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.name && touched.name
+                      ? "text-input error"
+                      : "text-input"
+                  }
+                  value={values.bio}
+
+
                 />
                 {errors.name && touched.name && (
                   <div className="input-feedback">{errors.name}</div>
@@ -140,6 +166,15 @@ function ProfileSettingsPage(props) {
                   disabled={isSubmitting}
                 >
                   Save and Countinue
+                </Button>
+              </Form.Item>
+              <Form.Item>
+                <Button
+                  // onClick={handleSubmit}
+                  // type="primary"
+                  // disabled={isSubmitting}
+                >
+                  Cancel 
                 </Button>
               </Form.Item>
             </Form>

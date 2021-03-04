@@ -55,7 +55,7 @@ function AddTwit(props) {
           let dataToSubmit = {
             email: props.user.userData.email,
             twit: values.twit,
-            username: props.user.userData.name,
+            username: props.user.userData.username,
           };
 
           dispatch(addTwit(dataToSubmit)).then(response => {
