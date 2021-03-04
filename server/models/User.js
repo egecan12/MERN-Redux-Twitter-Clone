@@ -40,7 +40,8 @@ const userSchema = mongoose.Schema({
         type: String
     },
     username: {
-        type: String
+        type: String,
+        unique: 1
     }
 })
 

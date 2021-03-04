@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import { addTwit, updateProfileSettings } from "../../../_actions/user_actions";
 import { useDispatch } from "react-redux";
 import Gravatar from "react-gravatar";
+import { Link } from "react-router-dom";
+import ButtonB4 from "react-bootstrap/Button";
 
 import { Form, Input, Button } from "antd";
 
@@ -36,8 +38,6 @@ function ProfileSettingsPage(props) {
   let myBio = props.user?.userData?.bio;
   let myBirthday = props.user?.userData?.birthday;
   let myUsername = props.user?.userData?.username;
-
-
 
   const dispatch = useDispatch();
   return (
@@ -89,16 +89,13 @@ function ProfileSettingsPage(props) {
         return (
           <div className="app">
             <h2>Profile Settings</h2>
-            <Form
-              style={{ minWidth: "375px" }}
-              onSubmit={handleSubmit}
-            >
+            <Form style={{ minWidth: "375px" }} onSubmit={handleSubmit}>
               <Gravatar
                 email={myEmail}
                 style={{ border: "1px solid black", borderRadius: "50%" }}
                 size={150}
               />
-                <Form.Item label="Username">
+              <Form.Item label="Username" required>
                 <Input
                   id="username"
                   placeholder={myUsername}
@@ -111,14 +108,12 @@ function ProfileSettingsPage(props) {
                       : "text-input"
                   }
                   value={values.username}
-
-
                 />
                 {errors.name && touched.name && (
                   <div className="input-feedback">{errors.name}</div>
                 )}
               </Form.Item>
-              <Form.Item label="Biography">
+              <Form.Item label="Biography" required>
                 <Input
                   id="bio"
                   placeholder={myBio}
@@ -131,15 +126,13 @@ function ProfileSettingsPage(props) {
                       : "text-input"
                   }
                   value={values.bio}
-
-
                 />
                 {errors.name && touched.name && (
                   <div className="input-feedback">{errors.name}</div>
                 )}
               </Form.Item>
 
-              <Form.Item>
+              <Form.Item label="Birthday" required>
                 <label htmlFor="birthday" className="text-secondary">
                   What is your Birthdate:
                 </label>
@@ -153,7 +146,7 @@ function ProfileSettingsPage(props) {
                   value={values.birthday}
                 />
               </Form.Item>
-              <Form.Item >
+              <Form.Item>
                 <label htmlFor="forgetPassword">
                   Send us an email to change your password
                 </label>
@@ -164,18 +157,22 @@ function ProfileSettingsPage(props) {
                   onClick={handleSubmit}
                   type="primary"
                   disabled={isSubmitting}
+                  variant="success"
                 >
                   Save and Countinue
                 </Button>
               </Form.Item>
               <Form.Item>
-                <Button
-                  // onClick={handleSubmit}
-                  // type="primary"
-                  // disabled={isSubmitting}
-                >
-                  Cancel 
-                </Button>
+                <Link to="/">
+                  <ButtonB4
+                    // onClick={handleSubmit}
+                    // type="primary"
+                    // disabled={isSubmitting}
+                    variant="danger"
+                  >
+                    Cancel
+                  </ButtonB4>
+                </Link>
               </Form.Item>
             </Form>
           </div>
