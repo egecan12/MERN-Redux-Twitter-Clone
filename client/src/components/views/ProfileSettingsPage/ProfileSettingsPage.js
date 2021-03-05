@@ -133,9 +133,7 @@ function ProfileSettingsPage(props) {
               </Form.Item>
 
               <Form.Item label="Birthday" required>
-                <label htmlFor="birthday" className="text-secondary">
-                  What is your Birthdate:
-                </label>
+
                 <input
                   className="form-control"
                   type="date"
@@ -148,19 +146,19 @@ function ProfileSettingsPage(props) {
               </Form.Item>
               <Form.Item>
                 <label htmlFor="forgetPassword">
-                  Send us an email to change your password
+                  Send us an email to change your password ------>
                 </label>
-                <Button type="primary">Reset Password</Button>
+                <ButtonB4 type="primary" variant="warning">Reset Password</ButtonB4>
               </Form.Item>
               <Form.Item>
-                <Button
+                <ButtonB4
                   onClick={handleSubmit}
                   type="primary"
                   disabled={isSubmitting}
-                  variant="success"
+                  variant="primary"
                 >
                   Save and Countinue
-                </Button>
+                </ButtonB4>
               </Form.Item>
               <Form.Item>
                 <Link to="/">
