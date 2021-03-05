@@ -72,9 +72,8 @@ export default function LandingPage2(props) {
                 className="form-control-name"
                 type="text"
                 name="query"
-                maxlength="25"
+                maxLength="25"
                 placeholder="What are you looking for?"
-                value="{{this.search_query}}"
                 required
               />
               <i className="material-icons right">search</i>
@@ -84,7 +83,7 @@ export default function LandingPage2(props) {
 
           <div className="all-posts">
             {data?.map((twit, index) => (
-              <div className="main-post">
+              <div className="main-post" key={index}>
                 <div className="header-post">
                   <div className="profile-post">
                   <Gravatar
@@ -95,8 +94,8 @@ export default function LandingPage2(props) {
 
                     <div className="name-date-post">
                       <Link
-                        hrclassNameef="/search?query=%40{{this.name}}"
-                        class="name-post"
+                        to="/"
+                        className="name-post"
                       />
                       <div className="date-post">{data?.[index]?.username}</div>
                     </div>

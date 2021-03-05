@@ -188,7 +188,7 @@ const LandingPage2Container = styled.div`
     background: #f7f7f7;
   }
   
-  .bottom-post > div:first-child {
+  .bottom-post > div:first-of-type {
     border-radius: 0 0 0 var(--main-post-border-radius);
     border-right: var(--main-post-border);
   }
