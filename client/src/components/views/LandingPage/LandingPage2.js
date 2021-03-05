@@ -6,33 +6,34 @@ import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import LandingPage2Container from "./LandingPage2.style";
+import { bringAllTwits } from "../../../_actions/user_actions";
 
-export default function LandingPage2() {
+
+
+export default function LandingPage2(props) {
+  const data = useSelector((state) => state.user.allTwits);
+  // console.log(data?.[0].email);
+  let myUsername = props?.user?.userData?.username;
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+      //To know my current status, send Auth request
+      dispatch(bringAllTwits()).then((response) => {
+        //Not Loggined in Status
+        if (!response.payload) {
+          console.log("payload failed");
+          console.log(response);
+          //Loggined in Status
+        } else {
+          console.log("payload succesful");
+        }
+      });
+    }, 500);
+  }, []);
   return (
     <LandingPage2Container>
-      <nav id="navbar">
-        <ul>
-          <Link href="/post"></Link>
-          <li>
-            <i class="material-icons menu">send</i>Post
-          </li>
-          <Link href="/hashtag">
-            <li>
-              <i class="material-icons menu">trending_up</i>Hashtag
-            </li>
-          </Link>
-          <Link href="/person">
-            <li>
-              <i class="material-icons menu">person</i>Person
-            </li>
-          </Link>
-          <Link href="/">
-            <li>
-              <i class="material-icons menu">home</i>Home
-            </li>
-          </Link>
-        </ul>
-      </nav>
       <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
@@ -40,12 +41,13 @@ export default function LandingPage2() {
       <div className="wrapper">
         <div className="wrapper2">
           <div className="main-form">
-            <Form className="form-wrapper" action="/post">
+            {/* <Form className="form-wrapper" action="/post">
               <input
                 className="form-control-name"
                 type="text"
                 name="name"
-                placeholder="Your name..."
+                placeholder={myUsername}
+                value={myUsername}
                 maxlength="25"
                 pattern="[\S]{4,25}"
                 required
@@ -61,7 +63,7 @@ export default function LandingPage2() {
               ></textarea>
               <i className="material-icons right">send</i>
               <input className="submit-button" type="submit" value="Post" />
-            </Form>
+            </Form> */}
           </div>
 
           <div className="main-form">
@@ -81,40 +83,42 @@ export default function LandingPage2() {
           </div>
 
           <div className="all-posts">
-            <div className="main-post">
-              <div className="header-post">
-                <div className="profile-post">
-                  <Link
-                    className="picture-post"
-                    href="/search?query=%40{{this.name}}"
+            {data?.map((twit, index) => (
+              <div className="main-post">
+                <div className="header-post">
+                  <div className="profile-post">
+                  <Gravatar
+                    email={data?.[index]?.email}
+                    style={{ border: "2px solid black", borderRadius: "50%" }}
+                    size={50}
                   />
-                  <div className="name-date-post">
-                    <Link
-                      hrclassNameef="/search?query=%40{{this.name}}"
-                      class="name-post"
-                    />
-                    <div className="date-post">"this.relative_time"</div>
+
+                    <div className="name-date-post">
+                      <Link
+                        hrclassNameef="/search?query=%40{{this.name}}"
+                        class="name-post"
+                      />
+                      <div className="date-post">{data?.[index]?.username}</div>
+                    </div>
+                    <i className="material-icons">more_vert</i>
                   </div>
-                  <i className="material-icons">more_vert</i>
+                </div>
+                <div className="content-post">
+                {data?.[index]?.twit}
+                </div>
+                <div className="bottom-post">
+                  <div className="like-post">
+                    <i className="material-icons">thumb_up</i>
+                  </div>
+                  <div className="comment-post">
+                    <i className="material-icons">comment</i>
+                  </div>
+                  <div className="share-post">
+                    <i className="material-icons">share</i>
+                  </div>
                 </div>
               </div>
-              <div className="content-post">
-                this.post <Link className="hashtag" href="#" />
-                test <Link class="hashtag" href="#" />
-                wohoooOOO aha <Link className="person" href="#" />
-              </div>
-              <div className="bottom-post">
-                <div className="like-post">
-                  <i className="material-icons">thumb_up</i>
-                </div>
-                <div className="comment-post">
-                  <i className="material-icons">comment</i>
-                </div>
-                <div className="share-post">
-                  <i className="material-icons">share</i>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

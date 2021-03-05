@@ -103,7 +103,7 @@ const LandingPage2Container = styled.div`
     /* Map the div to it's right place */
     grid-area: date;
     text-align: left;
-    color: grey;
+    color: black;
   }
   
   .content-post {
