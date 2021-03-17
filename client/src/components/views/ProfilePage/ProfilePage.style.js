@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import ProfilePage from "./ProfilePage";
 
-const LandingPage2Container = styled.div`
+const ProfilePageContainer = styled.div`
 .wrapper {
     background-color: #b366ff;
     --main-post-border-radius: 15px;
@@ -359,4 +360,4 @@ const LandingPage2Container = styled.div`
   
 `;
 
-export default LandingPage2Container;
+export default ProfilePageContainer;

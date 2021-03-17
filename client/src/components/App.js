@@ -9,6 +9,8 @@ import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
 import ProfileSettingsPage from "./views/ProfileSettingsPage/ProfileSettingsPage.js";
 import AddTwit from "./views/addTwit/addTwit.js";
+import ProfilePage from "./views/ProfilePage/ProfilePage.js";
+
 
 
 //null   Anyone Can go inside
@@ -26,6 +28,8 @@ function App() {
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/ProfileSettingsPage" component={Auth(ProfileSettingsPage, true)} />
           <Route exact path="/addTwit" component={Auth(AddTwit, true)} />
+          <Route exact path="/profilePage" component={Auth(ProfilePage, true)} />
+
 
         </Switch>
       </div>

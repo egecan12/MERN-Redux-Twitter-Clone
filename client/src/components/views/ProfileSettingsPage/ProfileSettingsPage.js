@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect }  from "react";
 import moment from "moment";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -40,13 +40,20 @@ function ProfileSettingsPage(props) {
   let myUsername = props.user?.userData?.username;
 
   const dispatch = useDispatch();
+
+  // useEffect(() => {
+   
+      
+   
+  // }, [])
+
   return (
     <Formik
       initialValues={{
-        bio: "",
-        email: "",
-        birthday: "",
-        username: "",
+        bio: myBio ? myBio:"",
+        email: myEmail ? myEmail: "",
+        birthday: myBirthday ? myBirthday: "",
+        username: myUsername ? myUsername : "",
       }}
       validationSchema={Yup.object().shape({
         bio: Yup.string(),
@@ -146,7 +153,7 @@ function ProfileSettingsPage(props) {
               </Form.Item>
               <Form.Item>
                 <label htmlFor="forgetPassword">
-                  Send us an email to change your password ------>
+                  <p>Send us an email to change your password </p>
                 </label>
                 <ButtonB4 type="primary" variant="warning">Reset Password</ButtonB4>
               </Form.Item>

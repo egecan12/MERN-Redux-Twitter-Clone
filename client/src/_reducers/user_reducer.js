@@ -6,6 +6,8 @@ import {
   ADD_TWIT,
   ALL_TWITS,
   PROFILE_SETTINGS,
+  GET_PROFILE_PAGE,
+  ALL_PERSONAL_TWITS,
 } from "../_actions/types";
 
 export default function (state = {}, action) {
@@ -22,6 +24,10 @@ export default function (state = {}, action) {
       return { ...state };
     case PROFILE_SETTINGS:
       return { ...state, profile_settings: action.payload };
+    case GET_PROFILE_PAGE:
+      return { ...state, get_profile_page: action.payload };
+    case ALL_PERSONAL_TWITS:
+      return { ...state, allPersonalTwits: action.payload };
     case ADD_TWIT:
       return { ...state, addTwit: action.payload };
     default:

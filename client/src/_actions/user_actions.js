@@ -6,7 +6,9 @@ import {
     LOGOUT_USER,
     ADD_TWIT,
     ALL_TWITS,
-    PROFILE_SETTINGS
+    PROFILE_SETTINGS,
+    GET_PROFILE_PAGE,
+    ALL_PERSONAL_TWITS
 } from './types';
 import { USER_SERVER } from '../components/Config.js';
 
@@ -66,6 +68,24 @@ export function bringAllTwits(){
 
     return {
         type: ALL_TWITS,
+        payload: request,
+    }
+} 
+export function bringAllPersonalTwits(dataToSubmit){
+    const request = axios.get(`${USER_SERVER}/bringAllPersonalTwits`, dataToSubmit)
+    .then(response => response.data)
+
+    return {
+        type: ALL_PERSONAL_TWITS,
+        payload: request,
+    }
+} 
+export function bringProfilePage(dataToSubmit){
+    const request = axios.get(`${USER_SERVER}/getProfilePageData`, dataToSubmit)
+    .then(response => response.data)
+
+    return {
+        type: GET_PROFILE_PAGE,
         payload: request,
     }
 } 
