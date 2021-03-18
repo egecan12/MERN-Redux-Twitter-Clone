@@ -18,7 +18,7 @@ const LandingPage2Container = styled.div`
   }
   
   .wrapper {
-    margin: 20px;
+   
   }
   
   .wrapper2 {

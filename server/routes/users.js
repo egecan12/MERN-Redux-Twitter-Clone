@@ -49,12 +49,13 @@ router.get("/bringAllTwits", (req, res, next) => {
 });
 router.get("/bringAllPersonalTwits", (req, res, next) => {
     
-    const query = { "username": "test"};
+    const query = { username: "test"}; //burayi duzelt hata
 
     return Twit.find(query)
       .then(result => {
         if(result) {
           console.log(`Successfully found document: ${result}.`);
+          console.log(req.body);
           res.json(result);
         } else {
           console.log("No document matches the provided query.");

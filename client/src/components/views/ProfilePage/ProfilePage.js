@@ -11,7 +11,6 @@ function ProfilePage(props) {
   const dataTwit = useSelector((state) => state.user.allPersonalTwits);
   const dataAuth = useSelector((state) => state.user.userData);
   console.log(dataAuth?.username);
-  const username = dataAuth?.username;
 
   const dispatch = useDispatch();
 
@@ -62,16 +61,16 @@ function ProfilePage(props) {
             <div className="d-flex ">
               <Gravatar
                 style={{ border: "2px solid black", borderRadius: "50%" }}
-                size={50}
+                size={100}
                 email={dataAuth?.email}
               />
               <div id="profileTextInfo" className="p-4">
                 <div className="d-flex">
-                  <b>
-                    <p className="d-flex " style={{ fontSize: "1.5em" }}>
-                      {dataAuth?.username}
+                  
+                    <p className="d-flex " style={{ fontSize: "1.1em" }}>
+                      Username: <b>{dataAuth?.username}</b>
                     </p>
-                  </b>
+                 
                 </div>
                 <div>
                   <p style={{ width: "200px" }}>Bio: {dataAuth?.bio}</p>
