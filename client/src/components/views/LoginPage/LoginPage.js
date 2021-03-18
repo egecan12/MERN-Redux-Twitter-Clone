@@ -186,7 +186,7 @@ function LoginPage(props) {
                   </Form.Item>
                 </form>
               </div>
-              <div className="bannerImg" width="500" >
+              <div className="bannerImgDiv" width="500" >
                 <img className="bannerImg" src={Banner} />
               </div>
             </div>

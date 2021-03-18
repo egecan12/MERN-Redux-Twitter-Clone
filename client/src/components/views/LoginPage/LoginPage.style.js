@@ -17,6 +17,9 @@ const LoginPageContainer = styled.div`
     width: 200vh;
     
 }
+.bannerImgDiv{
+    // display:none;
+}
 @media screen and (max-width: 600px) {
     .bannerImg {
       display: none;

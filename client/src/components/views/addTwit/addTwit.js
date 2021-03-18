@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { addTwit } from "../../../_actions/user_actions";
 import { useDispatch } from "react-redux";
+import AddTwitContainer from "./addTwit.style";
 
 import {
   Form,
@@ -83,11 +84,12 @@ function AddTwit(props) {
           handleReset,
         } = props;
         return (
-          <div className="app">
-            <h2>Add twit</h2>
+          <AddTwitContainer>
+          <div className="mainDiv">
+            <h2 style={{ color: 'white' }}>Say something !</h2>
             <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
 
-              <Form.Item required label="Twit">
+              <Form.Item required label="Twit is required">
                 <Input
                   id="twit"
                   placeholder="Enter your twit"
@@ -110,6 +112,7 @@ function AddTwit(props) {
               </Form.Item>
             </Form>
           </div>
+          </AddTwitContainer>
         );
       }}
     </Formik>

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 const LandingPage2Container = styled.div`
 .wrapper {
-    background-color: #b366ff;
+    //background-color: #b366ff;
     --main-post-border-radius: 15px;
     --main-post-border: 1px solid #c9c9c9;
     --main-post-font-size: 16px;
@@ -11,6 +11,11 @@ const LandingPage2Container = styled.div`
       0 1px 2px rgba(0, 0, 0, 0.24);
     --web-font: Open Sans, Arial, Helvetica, sans-serif;
     font-family: var(--web-font);
+
+    background-color: #330033;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='104' height='104' viewBox='0 0 90 90'%3E%3Ccircle fill-opacity='0.97' fill='%2306B' cx='45' cy='45' r='12'/%3E%3Cg fill='%23800' fill-opacity='0.97'%3E%3Ccircle cx='0' cy='90' r='12'/%3E%3Ccircle cx='90' cy='90' r='12'/%3E%3Ccircle cx='90' cy='0' r='12'/%3E%3Ccircle cx='0' cy='0' r='12'/%3E%3C/g%3E%3C/svg%3E");
+/* background by SVGBackgrounds.com */
+
   }
   
   .wrapper {

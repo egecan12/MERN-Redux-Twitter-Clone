@@ -8,7 +8,8 @@ function Footer() {
             bottom:"0",
             width:"100%",
         }}>
-           <p> Happy Coding  <Icon type="smile" /></p>
+           <p>Developed by Egecan Kahyaoglu <Icon type="smile" /></p>
+           <p>Thanks for SVGBackgrounds.com</p>
         </div>
     )
 }
