@@ -72,7 +72,7 @@ export function bringAllTwits(){
     }
 } 
 export function bringAllPersonalTwits(dataToSubmit){
-    const request = axios.get(`${USER_SERVER}/bringAllPersonalTwits`, dataToSubmit)
+    const request = axios.post(`${USER_SERVER}/bringAllPersonalTwits`, dataToSubmit)
     .then(response => response.data)
 
     return {
@@ -80,15 +80,15 @@ export function bringAllPersonalTwits(dataToSubmit){
         payload: request,
     }
 } 
-export function bringProfilePage(dataToSubmit){
-    const request = axios.get(`${USER_SERVER}/getProfilePageData`, dataToSubmit)
-    .then(response => response.data)
+// export function bringProfilePage(dataToSubmit){
+//     const request = axios.get(`${USER_SERVER}/getProfilePageData`, dataToSubmit)
+//     .then(response => response.data)
 
-    return {
-        type: GET_PROFILE_PAGE,
-        payload: request,
-    }
-} 
+//     return {
+//         type: GET_PROFILE_PAGE,
+//         payload: request,
+//     }
+// } 
 export function updateProfileSettings(dataToSubmit){
     const request = axios.post(`${USER_SERVER}/sendProfileSettings`, dataToSubmit)
     .then(response => response.data)
