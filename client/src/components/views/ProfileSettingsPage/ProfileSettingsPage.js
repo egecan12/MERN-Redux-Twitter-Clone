@@ -102,7 +102,7 @@ function ProfileSettingsPage(props) {
                 style={{ border: "1px solid black", borderRadius: "50%" }}
                 size={150}
               />
-              <Form.Item label="Username" required>
+              {/* <Form.Item label="Username" required>
                 <Input
                   id="username"
                   placeholder={myUsername}
@@ -119,7 +119,7 @@ function ProfileSettingsPage(props) {
                 {errors.name && touched.name && (
                   <div className="input-feedback">{errors.name}</div>
                 )}
-              </Form.Item>
+              </Form.Item> */}
               <Form.Item label="Biography" required>
                 <Input
                   id="bio"
