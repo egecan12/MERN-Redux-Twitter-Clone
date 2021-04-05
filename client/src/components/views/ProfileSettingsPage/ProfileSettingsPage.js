@@ -1,4 +1,4 @@
-import React, { useEffect }  from "react";
+import React, { useEffect } from "react";
 import moment from "moment";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -42,18 +42,16 @@ function ProfileSettingsPage(props) {
   const dispatch = useDispatch();
 
   // useEffect(() => {
-   
-      
-   
+
   // }, [])
 
   return (
     <Formik
       initialValues={{
-        bio: myBio ? myBio:"",
-        email: myEmail ? myEmail: "",
-        birthday: myBirthday ? myBirthday: "",
-        username: myUsername ? myUsername : "",
+        bio: myBio ? myBio : "",
+        email: myEmail ? myEmail : "",
+        birthday: myBirthday ? myBirthday : "",
+        // username: myUsername ? myUsername : "",
       }}
       validationSchema={Yup.object().shape({
         bio: Yup.string(),
@@ -65,7 +63,7 @@ function ProfileSettingsPage(props) {
             bio: values.bio,
             email: props.user.userData.email,
             birthday: values.birthday,
-            username: values.username,
+            // username: values.username,
           };
 
           console.log(props.user?.userData?.email);
@@ -140,7 +138,6 @@ function ProfileSettingsPage(props) {
               </Form.Item>
 
               <Form.Item label="Birthday" required>
-
                 <input
                   className="form-control"
                   type="date"
@@ -155,7 +152,9 @@ function ProfileSettingsPage(props) {
                 <label htmlFor="forgetPassword">
                   <p>Send us an email to change your password </p>
                 </label>
-                <ButtonB4 type="primary" variant="warning">Reset Password</ButtonB4>
+                <ButtonB4 type="primary" variant="warning">
+                  Reset Password
+                </ButtonB4>
               </Form.Item>
               <Form.Item>
                 <ButtonB4
@@ -163,20 +162,21 @@ function ProfileSettingsPage(props) {
                   type="primary"
                   disabled={isSubmitting}
                   variant="primary"
+                  to="/"
                 >
                   Save and Countinue
                 </ButtonB4>
               </Form.Item>
               <Form.Item>
                 <Link to="/">
-                  <ButtonB4
+                  <Button
                     // onClick={handleSubmit}
                     // type="primary"
                     // disabled={isSubmitting}
                     variant="danger"
                   >
                     Cancel
-                  </ButtonB4>
+                  </Button>
                 </Link>
               </Form.Item>
             </Form>
