@@ -1,25 +1,32 @@
-import React, { useState } from 'react';
-import LeftMenu from './Sections/LeftMenu';
-import RightMenu from './Sections/RightMenu';
-import { Drawer, Button, Icon } from 'antd';
-import './Sections/Navbar.css';
-import logo from '../../../img/logo.png';
+import React, { useState } from "react";
+import LeftMenu from "./Sections/LeftMenu";
+import RightMenu from "./Sections/RightMenu";
+import { Drawer, Button, Icon } from "antd";
+import "./Sections/Navbar.css";
+import logo from "../../../img/banner.jpg";
+
+// Use the 'logo' variable as your image source in your code
 
 function NavBar() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
-    setVisible(true)
+    setVisible(true);
   };
 
   const onClose = () => {
-    setVisible(false)
+    setVisible(false);
   };
 
   return (
-    <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
+    <nav
+      className="menu"
+      style={{ position: "fixed", zIndex: 5, width: "100%" }}
+    >
       <div className="menu__logo">
-        <a href="/"><img src={logo}></img></a>
+        <a href="/">
+          <img src={logo}></img>
+        </a>
       </div>
       <div className="menu__container">
         <div className="menu_left">
@@ -48,7 +55,7 @@ function NavBar() {
         </Drawer>
       </div>
     </nav>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

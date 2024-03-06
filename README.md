@@ -1,17 +1,61 @@
-Hello, My Friends  
-Thank you for having interest in this repository ! 
+# Project Title
 
-To use this application, 
+TwitZilla is a Twitter Clone Project developed for education Purposes with MERN Stack.
 
-1. make dev.js file inside config folder 
-2. put mongoDB info into dev.js file 
-3. Type  " npm install " inside the root directory  ( Download Server Dependencies ) 
-4. Type " npm install " inside the client directory ( Download Front-end Dependencies )
+## Technologies Used
 
+This project is built with the following technologies:
 
-If you have problem, feel free to ask me ^^ 
+- Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
+- Express.js: A fast, unopinionated, minimalist web framework for Node.js.
+- MongoDB: A source-available cross-platform document-oriented database program.
+- Mongoose: An Object Data Modeling (ODM) library for MongoDB and Node.js.
+- React.js: A JavaScript library for building user interfaces.
+- Redux: A Predictable State Container for JS Apps.
 
-You can watch the tutorial for this app.
+## Getting Started
 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+### Prerequisites
 
+What things you need to install the software and how to install them:
+
+- Node.js
+- npm
+- MongoDB
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+   ```
+
+   ```
+2. npm install
+
+```
+
+```
+
+3.  cd client
+    npm install
+
+````
+4. ```
+ cd server
+ npm install
+````
+
+Usage
+[Provide instructions on how to use your application]
+
+Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+Contact
+Egecan Kahyaoglu - - [Your Twitter Handle]
+
+Project Link: https://github.com/your_username/repo_name

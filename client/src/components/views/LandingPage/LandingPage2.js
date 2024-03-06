@@ -4,11 +4,8 @@ import Card from "react-bootstrap/Card";
 import Gravatar from "react-gravatar";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import styled from "@emotion/styled";
 import LandingPage2Container from "./LandingPage2.style";
 import { bringAllTwits } from "../../../_actions/user_actions";
-
-
 
 export default function LandingPage2(props) {
   const data = useSelector((state) => state.user.allTwits);
@@ -86,25 +83,20 @@ export default function LandingPage2(props) {
               <div className="main-post" key={index}>
                 <div className="header-post">
                   <div className="profile-post">
-                  <Gravatar
-                    email={data?.[index]?.email}
-                    style={{ border: "2px solid black", borderRadius: "50%" }}
-                    size={50}
-                  />
+                    <Gravatar
+                      email={data?.[index]?.email}
+                      style={{ border: "2px solid black", borderRadius: "50%" }}
+                      size={50}
+                    />
 
                     <div className="name-date-post">
-                      <Link
-                        to="/"
-                        className="name-post"
-                      />
+                      <Link to="/" className="name-post" />
                       <div className="date-post">{data?.[index]?.username}</div>
                     </div>
                     <i className="material-icons">more_vert</i>
                   </div>
                 </div>
-                <div className="content-post">
-                {data?.[index]?.twit}
-                </div>
+                <div className="content-post">{data?.[index]?.twit}</div>
                 <div className="bottom-post">
                   <div className="like-post">
                     <i className="material-icons">thumb_up</i>
