@@ -34,10 +34,7 @@ What things you need to install the software and how to install them:
 
    ```
 
-2. ```sh
-   npm install
-
-   ```
+2. Create MongoCollection on Atlas and add ENV Variables (check the example.env)
 
 3. ```sh
    cd client
