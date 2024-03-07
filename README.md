@@ -2,6 +2,10 @@
 
 TwitZilla is a Twitter Clone Project developed for education Purposes with MERN Stack.
 
+## Project Link
+
+https://mern-redux-twitter-clone.onrender.com
+
 ## Technologies Used
 
 This project is built with the following technologies:
@@ -57,3 +61,7 @@ Contact
 Egecan Kahyaoglu -
 
 Project Link: git@github.com:egecan12/MERN-Redux-Twitter-Clone.git
+
+![tw3](https://github.com/egecan12/MERN-Redux-Twitter-Clone/assets/45043515/b2baaa24-415f-444a-a8ef-2bc92d0dec6d)
+![tw2](https://github.com/egecan12/MERN-Redux-Twitter-Clone/assets/45043515/ee14f76a-a57d-4489-9660-13a5fce0ccf0)
+![tw1](https://github.com/egecan12/MERN-Redux-Twitter-Clone/assets/45043515/03352d75-212b-48fd-87c0-98a2ca9491a8)
