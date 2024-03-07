@@ -3,7 +3,8 @@ import LeftMenu from "./Sections/LeftMenu";
 import RightMenu from "./Sections/RightMenu";
 import { Drawer, Button, Icon } from "antd";
 import "./Sections/Navbar.css";
-import logo from "../../../img/banner.jpg";
+import logo from "../../../img/bird_logo.svg";
+// import { ReactComponent as logo } from "../../../img/bird_logo.svg";
 
 // Use the 'logo' variable as your image source in your code
 
@@ -25,7 +26,7 @@ function NavBar() {
     >
       <div className="menu__logo">
         <a href="/">
-          <img src={logo}></img>
+          <img src={logo} style={{ width: "48px" }}></img>
         </a>
       </div>
       <div className="menu__container">

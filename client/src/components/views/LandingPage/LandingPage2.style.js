@@ -41,7 +41,7 @@ const LandingPage2Container = styled.div`
     border-radius: var(--main-post-border-radius);
     margin: auto;
     min-width: 200px;
-    width: 100%;
+    width: 50%;
     max-width: 600px;
     box-shadow: var(--custom-box-shadow);
   }
@@ -230,10 +230,6 @@ const LandingPage2Container = styled.div`
   }
 
   .main-form {
-    background-color: white;
-    border-radius: var(--main-post-border-radius);
-    margin: 10px;
-    box-shadow: var(--custom-box-shadow);
   }
 
   .form-wrapper {
@@ -307,15 +303,15 @@ const LandingPage2Container = styled.div`
     color: var(--custom-blue);
   }
 
-  nav {
-    width: 100%;
-    color: black;
-    background: white;
-    font-weight: bold;
-    letter-spacing: 0.025em;
-    box-shadow: var(--custom-box-shadow);
-    text-align: center;
-  }
+  // nav {
+  //   width: 100%;
+  //   color: black;
+  //   background: white;
+  //   font-weight: bold;
+  //   letter-spacing: 0.025em;
+  //   box-shadow: var(--custom-box-shadow);
+  //   text-align: center;
+  // }
 
   nav ul {
     margin: 0;

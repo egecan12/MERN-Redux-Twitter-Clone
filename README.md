@@ -28,26 +28,26 @@ What things you need to install the software and how to install them:
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-   ```
 
-   ```
+   ````sh
+   git clone git@github.com:egecan12/MERN-Redux-Twitter-Clone.git
+
+   ```sh
+   ````
+
 2. npm install
 
-```
+   ```sh
 
-```
+   ```
 
-3.  cd client
-    npm install
+3. cd client
+   npm install
 
-````
-4. ```
- cd server
- npm install
-````
+4. ```sh
+   cd server
+   npm install
+   ```
 
 Usage
 [Provide instructions on how to use your application]
@@ -56,6 +56,6 @@ Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 Contact
-Egecan Kahyaoglu - - [Your Twitter Handle]
+Egecan Kahyaoglu -
 
-Project Link: https://github.com/your_username/repo_name
+Project Link: git@github.com:egecan12/MERN-Redux-Twitter-Clone.git
